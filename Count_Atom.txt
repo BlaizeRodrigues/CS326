@@ -1,0 +1,14 @@
+;Name: Blaize K. Rodrigues
+;Class: CS326 UNLV
+;Description: LISP Program that counts the number of atoms in a list
+;ensures that the expression is a list
+
+(defun count-atoms (exp)
+  (cond 
+  	((not(listp exp))"Error: count-atoms called with a non-list")
+    ((null exp) 0)
+    ((listp (car exp)) (+ (count-atoms (car exp)) (count-atoms (cdr exp))))
+    (t(+ 1 (count-atoms (cdr exp))))))
+
+
+
